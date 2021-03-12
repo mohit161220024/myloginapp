@@ -1,0 +1,68 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <h4>Welcome {{user}}</h4>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="home">HOMEPAGE</a></li>
+        <li><a href="contact">CONTACT</a></li>
+        <li><a (click)=Logout()>LOGOUT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid bg-grey" style="background-color: #91ec88;">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Pune,India</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +0 9876543210</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> myemailpune@gmail.com</p>
+      <br>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Mumbai,India</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +0 9979843210</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> myemailmumbai@gmail.com</p>
+      <br>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Hyderabad,India</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +0 8879843210</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> myemailhyd@gmail.com</p>
+    </div>
+
+    <div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" (click)="this.route.navigate(['home'])" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <span class="glyphicon glyphicon-globe logo"></span>
+
+  <div class="col-sm-8">
+    <h2>Our Values</h2>
+    <h4><strong>MISSION:</strong> Grow to the fullest </h4>
+    <p><strong>VISION:</strong> Make a Nation free of unemployment </p>
+  </div>
+</div>

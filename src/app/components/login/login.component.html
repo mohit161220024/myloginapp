@@ -1,0 +1,39 @@
+
+<form class="loginform" [formGroup]="loginForm" id="loginform" role="form">
+    <div class="form-group"><h1>Sign In</h1>    
+        <div class="form-group">
+            <span id="error-message" ></span>
+        </div>  
+        <div class="form-group">
+            <span id="error-email" ></span>
+        </div>
+        <div class="form-group">
+        <label><b>Email</b></label>
+        <br>  
+        <input type="email"  value="loginForm.Email" id="Email" formControlName="Email" placeholder="abc@gmail.com" required>     
+        <div *ngIf="loginForm.get('Email').touched && loginForm.controls.Email.hasError('required')"  id="empty">Please enter email id</div>
+        <div  *ngIf="loginForm.get('Email').errors?.pattern"  id="invalid">Please enter valid email</div>  
+        <br><br>  
+        </div> 
+        <div class="form-group">
+            <span id="error-password" ></span>
+        </div>
+        <div class="form-group"> 
+        <label><b>Password</b></label>
+        <br>  
+        <input type="Password" id="Pass" placeholder="Password" formControlName="Password" required> 
+        <div *ngIf="loginForm.get('Password').touched && loginForm.controls.Password.hasError('required')" id="empty">Please enter password</div>   
+        <br><br>  
+    </div>     
+        <div class="form-group">    
+            <button type="submit"  class="btn-success" id="log" [disabled]=loginForm.invalid (click)="validateForm()" >Login</button>                    
+        </div>
+        <br><br>
+        <div class="form-group" >
+            <div id="signupbtn">
+                Don't have an account!<a style="color:rgb(223, 2, 31)" [routerLink]="['/signup']"> New User? Register here</a>
+            </div>
+        </div>         
+              
+    </div>  
+</form>  

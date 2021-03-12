@@ -1,0 +1,12 @@
+
+
+<nav class="navbar navbar-expand-xl navbar-dark"> 		
+    <div class="navbar-nav ml-auto" >
+            <a routerLink="login"class="nav-item ml-auto nav-link user-action" *ngIf="!isLoggedUser"><b>Login/Signup</b></a>
+        <div *ngIf="isLoggedUser">
+            <h1><b>{{userName}}</b></h1>
+           <a href (click)="Logout()">Logout</a>
+            
+        </div>
+    </div>
+</nav>

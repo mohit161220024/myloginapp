@@ -1,0 +1,80 @@
+.signup{  
+    width: 382px;  
+    overflow: hidden;  
+    margin: auto;  
+    margin: 20 0 0 450px;  
+    padding: 40px;  
+    background: #c3f316;  
+    border-radius: 15px ;  
+      
+}  
+h1{  
+    text-align: center;  
+    color: #277582;    
+} 
+p{  
+    text-align: center;  
+    color: #277582;  
+    padding: 10px;  
+} 
+label{  
+    color: #000c0a;  
+    font-size: 17px;  
+}  
+#attribute{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+}  
+#Pass{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+      
+} 
+#Pass-repeat{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+      
+} 
+#error-message{  
+    padding: 50px;  
+    color:red;
+    }
+#error-title{   
+        color:red;
+        }
+#error-fname{   
+        color:red;
+        }
+#error-lname{   
+        color:red;
+        }
+#error-mobilenum{   
+            color:red;
+            }
+#error-dob{   
+            color:red;
+            }
+#error-email{   
+    color:red;
+    }
+#error-password{   
+    color:red;
+    }
+#error-confirmpass{   
+        color:red;
+        }
+#empty{
+    color: red;
+    }
+#invalid{
+    color: red;
+    }

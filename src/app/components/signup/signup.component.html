@@ -1,0 +1,135 @@
+<form class="signup" method="post" id="addUser" (ngSubmit)="(validateForm(addUser.value))" [formGroup]="addUser" >
+    <h1>Sign Up</h1>
+    <p>Please fill in this form to create an account.</p>
+    <div class="form-group">
+        <span id="error-message"></span>
+    </div>
+
+    <div class="form-group">
+        <span id="error-title"></span>
+    </div>
+    <div class="form-group">
+        <label><b>Title</b></label>
+        <br>
+        <select formControlName="Title" id="attribute" required>
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Miss">Miss</option>
+        </select>
+        <div id="invalid" *ngIf="addUser.get('Title').touched && addUser.controls.Title.hasError('required')">Please
+            choose a title</div>
+        <br><br>
+    </div>
+
+    <div class="form-group">
+        <span id="error-fname"></span>
+    </div>
+    <div class="form-group">
+        <label><b>FirstName</b></label>
+        <br>
+        <input formControlName="FirstName" id="attribute" required>
+        <div id="invalid" *ngIf="addUser.get('FirstName').touched && addUser.controls.FirstName.hasError('required')">
+            Please enter first name</div>
+        <div id="invalid" *ngIf="addUser.controls.FirstName.hasError('pattern')">Please enter only alphabets</div>
+        <br><br>
+    </div>
+
+    <div class="form-group">
+        <span id="error-lname"></span>
+    </div>
+    <div class="form-group">
+        <label><b>LastName</b></label>
+        <br>
+        <input formControlName="LastName" id="attribute" required>
+        <div id="invalid" *ngIf="addUser.get('LastName').touched && addUser.controls.LastName.hasError('required')">
+            Please enter Last name</div>
+        <div id="invalid" *ngIf="addUser.controls.LastName.hasError('pattern')">Please enter only alphabets</div>
+        <br><br>
+    </div>
+
+    <div class="form-group">
+        <span id="error-mobilenum"></span>
+    </div>
+    <div class="form-group">
+        <label><b>MobileNumber</b></label>
+        <br>
+        <input placeholder="(845)555-1212" formControlName="MobileNumber" id="attribute" required>
+        <div id="invalid"
+            *ngIf="addUser.get('MobileNumber').touched && addUser.controls.MobileNumber.hasError('required')">Please
+            enter mobile number</div>
+        <div id="invalid" *ngIf="addUser.controls.MobileNumber.hasError('pattern')">Please enter valid mobile number
+        </div>
+        <br><br>
+    </div>
+
+    <div class="form-group">
+        <span id="error-dob"></span>
+    </div>
+    <div class="form-group">
+        <label><b>Date of Birth</b></label>
+        <br>
+        <input type="date" formControlName="DateOfBirth" id="attribute" [max]="todayShort" [min]="maxDate" placeholder="01/01/2020"
+            required>
+        <div id="invalid" *ngIf="addUser.get('DateOfBirth').touched && addUser.get('DateOfBirth').hasError('required')">
+            DOB is required</div>
+            <div id="invalid"
+            *ngIf="addUser.get('DateOfBirth').touched && !addUser.controls.DateOfBirth.hasError('required') && addUser.hasError('notvalid')">
+            Age cannot be less than 18</div>
+            <div id="invalid"
+            *ngIf="addUser.get('DateOfBirth').touched && !addUser.controls.DateOfBirth.hasError('required') && addUser.hasError('overAge')">
+            Age cannot be more than 120</div>
+        <br><br>
+    </div>
+
+    <div class="form-group">
+        <span id="error-email"></span>
+    </div>
+    <div class="form-group">
+        <label><b>Email</b></label>
+        <br>
+        <input type="email" placeholder="user@example.com" formControlName="UserEmailId" id="attribute" required>
+        <div id="invalid" *ngIf="addUser.get('UserEmailId').touched && addUser.get('UserEmailId').hasError('required')">
+            Please enter email id</div>
+        <div id="invalid" *ngIf="addUser.get('UserEmailId').errors?.pattern">Please enter valid email</div>
+        <br><br>
+    </div>
+
+    <div class="form-group">
+        <span id="error-password"></span>
+    </div>
+    <div class="form-group">
+        <label><b>Password</b></label>
+        <br>
+        <input type="password" placeholder="Enter Password" formControlName="Password" id="Pass" required>
+        <div id="invalid" *ngIf="addUser.controls.Password.touched && addUser.controls.Password.hasError('required')">
+            Please enter a password</div>
+        <div id="invalid" *ngIf="addUser.get('Password').touched && addUser.controls.Password.hasError('minlength')">
+            Password must be minimum 8 characters</div>
+        <div id="invalid"
+            *ngIf="!addUser.get('Password').hasError('minlength') && addUser.controls.Password.hasError('pattern')">Must
+            have atleast one uppercase,lowercase,special character and a digit</div>
+        <br><br>
+    </div>
+
+    <div class="form-group">
+        <span id="error-confirmpass"></span>
+    </div>
+    <div class="form-group">
+        <label><b>Confirm Password</b></label>
+        <br>
+        <input type="password" placeholder="Enter Password again" formControlName="confirmPass" id="Pass-repeat"
+            required>
+        <div id="invalid"
+            *ngIf="addUser.get('confirmPass').touched && addUser.controls.confirmPass.hasError('required')">Please
+            confirm your password</div>
+        <div id="invalid"
+            *ngIf="addUser.get('confirmPass').touched && !addUser.controls.confirmPass.hasError('required') && addUser.hasError('notSame')">
+            Password does not match</div>
+        <br><br>
+    </div>
+
+    <div class="buttons">
+        <button type="button" (click)="this.route.navigate(['login'])">Cancel</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" [disabled]=addUser.invalid>Sign Up</button>
+    </div>
+</form>
