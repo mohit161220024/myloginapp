@@ -32,5 +32,5 @@ jobs:
       with:
         app-name: 'Test4FrontEnd'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_acb11dcef5ad423b891be48a46adc298 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_1a3e12db8be94a4e992d2a8799929431 }}
         package: .
